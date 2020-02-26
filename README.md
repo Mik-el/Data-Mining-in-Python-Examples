@@ -6,8 +6,8 @@ If you find them and you can use Github you can fix the code. Thank you!
 ## What is Data Mining
 It's the the set of techniques and methodologies which have as their object the extraction of useful information from large quantities of data (databases, data warehouses, etc.)
 
-## Talking about this code
-you'll learn how to work in Python on given datasets in "excel" format (.csv).
+## What you can find in this Repo
+You'll learn how to work in Python on given datasets in "excel" format (.csv).
 You'll mostly use the Pandas Library.
 
 
