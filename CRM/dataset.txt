@@ -1,0 +1,15 @@
+---client code: codice univoco per ogni cliente
+---installment: vale 1 se il primo acquisto del cliente è stato rateale, 0 altrimenti.
+---first_amount_spent: spesa effettuata dal cliente nel primo acquisto
+---number_of_products: numero di prodotti acquistati dal cliente nel primo acquisto
+---dim_big: vale 1 se l'agenzia dove è stato effettuato il primo acquisto è di dimensioni grandi (serve più di 60 clienti)
+---dim_medium: vale 1 se l'agenzia dove è stato effettuato il primo acquisto è di dimensioni medie (serve da 15 a 60 clienti)
+---dim_small: vale 1 se l'agenzia dove è stato effettuato il primo acquisto è di dimensioni piccoli (serve meno di 15 clienti)
+---north: vale 1 se l'agenzia dove è stato effettuato il primo acquisto si trovava nell'Italia settentrionale
+---center: vale 1 se l'agenzia dove è stato effettuato il primo acquisto si trovava nell'Italia centrale
+---south_and_islands: vale 1 se l'agenzia dove è stato effettuato il primo acquisto si trovava nell'Italia meridionale o nelle isole
+---age51_89: vale 1 se il cliente ha un'età compresa tra 51 e 89 anni
+---age36_50: vale 1 se il cliente ha un'età compresa tra 36 e 50 anni
+---age15_35: vale 1 se il cliente ha un'età compresa tra 15 e 35 anni
+---sex: vale 0 per le donne e 1 per gli uomini
+---Y: è la variabile che vogliamo predirre, vale 1 se il cliente ha effettuato più di un acquisto, 0 se ha effettuato solo l'acquisto iniziale

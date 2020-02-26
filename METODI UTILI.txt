@@ -1,0 +1,68 @@
+#CICLO FOR
+fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+  print(x)
+
+#DATATYPE
+print ("\n **********\n Stampa del datatype di ogni colonna: \n *********\n") 
+display(data.dtypes)
+
+#STAMPARE ANCHE I VALORI CHE NON MOSTRA
+pd.set_option('display.expand_frame_repr', False)
+pd.option_context('display.max_rows', None, 'display.max_columns', None)
+
+#METODO CONVERT OBJECTS
+Forza la conversione degli oggetti del dataset in tipi di dati numerici
+dati = dati.convert_objects(convert_numeric=True)
+
+#GROUP BY
+group large amounts of data and compute operations on these groups.
+
+#Riempi i dati mancanti con lo 0
+data = data.fillna(0)
+
+###### se first_amount_spent e number_of_products =0 sostituisco la MEDIA ######
+numpy_array = res.values
+X=numpy_array[:,[1,2]]
+
+imp = SimpleImputer(missing_values=0, strategy="mean")
+X = imp.fit_transform(X)
+print(X[5])
+
+
+
+#DISEGNA ISTOGRAMMA
+print ("\n **********\n Stampa istogramma con 30 colonne \n *********\n")
+istogramma = letti.hist(bins=30)
+
+istogramma.set_title('Relazione tra numero di letti e numero di ospedali')
+istogramma.set_xlabel('Numero letti')
+istogramma.set_ylabel('Numero ospedali')
+
+plt.show()
+
+
+#DISEGNA GRAFICO
+dati.plot.barh()
+
+
+#DISEGNA GRAFICO
+print ("\n **********\n Grafico dopo il preprocessing: \n *********\n")
+data.plot( kind='barh', x='children', y='has_nurs' )
+plt.show()
+
+
+
+# Con il set di dati suddiviso in un train e test set, è possibile iniziare a costruire un modello di classificazione.
+# L'idea alla base è che, non sapendo quale tipo di classificatore funzionerà al meglio su questo set di dati, verranno 
+# provati prima una serie di classificatori e successivamente si proverà ad ottimizzare il classificatore con le 
+# migliori prestazioni di questo gruppo iniziale di classificatori. (con la cross validation)
+# Per tale motivo viene creato un dizionario, che 
+# contiene come chiavi il nome dei classificatori e come valori un'istanza dei classificatori.
+
+
+# Matrice di Confusione per Decision Tree
+from sklearn.model_selection import cross_val_predict
+from sklearn.metrics import confusion_matrix
+predictions = cross_val_predict(decision_tree, X_train, y_train, cv=3)
+confusion_matrix(y_train, predictions)

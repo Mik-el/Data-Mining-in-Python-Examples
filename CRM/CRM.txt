@@ -1,0 +1,86 @@
+CRM data
+
+Come prima cosa:
+Verificare che la somma delle 3 colonne di age vale 1 (Lo stesso vale per dim). (Fare la correzione con il valore medio, o valore 
+più frequente). Posso costruire una nuova colonna con la somma e vedere se si trova il valore 1.
+
+Y è il dato su cui fare la predizione:
+Y = 1 se il cliente è abituale(ha fatto + di 1 acquisto)
+Y=0 se il cliente ha fatto solo 1 acquisto
+
+
+CRM: 
+   		[1] PREPROCESSING
+0- La colonna ID viene eliminta perchè non è possibile discretizzarla.
+
+1-Riempire i dati mancanti con il valore 0
+
+2-Discretizzare: i dati sono già discretizzati (Nel caso di discretizzazione eliminare la colonna 'codice cliente' perchè ha attributi diversi alto grado di ?)
+
+3-first amount e num of product1:
+	1)0 e 0 eliminare: Dati>seleziono il titolo della colonna>Filtro>sulla freccetta a fianco al titolo della colonna deseleziono tutto e seleziono solo i valori con lo 0
+	   >elimino selezionando le celle >Elimina righe
+	2) 1(first amount spent) e 0 (num prodotti) (e viceversa) dobbiamo sostituire con la mendia la cella con valore 0.
+
+4- sum_age: è la somma delle 3 fasce di età se=1 (OK) altrimenti si procede all'eliminazione dell'intera riga.
+
+5-sum_dim:è la somma delle 3 dimensioni se =1 (OK) altrimenti si procede all'eliminazione dell'intera riga.
+
+
+		[1.1] ANALISI DEI DATI
+	MATRICE DI CORRELAZIONE: Per ottenere maggiori informazioni su come (fortemente)
+	 ogni caratteristica è correlata con la Variabile Target, possiamo calcolare e 
+	tracciare la matrice di correlazione per questo set di dati
+	data_copy = data.copy(deep=True)Una copia profonda costruisce
+			un nuovo oggetto composto e quindi, in modo ricorsivo,
+			 inserisce copie degli oggetti trovati nell'originale.
+	
+	corr_matrix = data.corr(): calcola la correlazione delle colonne senza i valori null e NaN
+	seaborn.heatmap(corr_matrix,
+			  vmax=1 (per le sfumature del colore selezionato), 
+			square =True(Se True, imposta l'aspetto Axes su "uguale" in modo che ogni cella abbia una forma quadrata.),
+			annot=True(scrive i valori nelle celle della matrice), 
+			fmt='.2f'(il numero nella cella ha 2 cifre decimali),
+			cmap(cambia il colore delle celle),
+			cbar_kws={"shrink": .5} (per la barra laterale dei colori <ne modifica l'altezza>),
+			robust=True (Se True e vmin o vmax sono assenti, 
+				l'intervallo della mappa di colori viene calcolato con quantili solidi anziché i valori estremi.)
+			)
+
+
+
+time.clock(): per misurare il tempo impiegato per eseguire il processo (modelli di classificazione)
+
+		[2] individuare quali sono gli attributi che sembrano maggiormente correlati alla variabile
+		     risposta Y
+            
+ la variabile Y è maggiormente correlata numero di podotti acquistati perchè se questo valore fosse 0, Y avrebbe un valore errato diverso da:
+	0 se il cliente ha effettuato solo il primo acquisto.
+	1 se il cliente ha effettuato più di un acquisto. 
+
+
+		[3] MODELLI DI CLASSIFICAZIONE:
+1- Alberi di classificazione
+
+2- Classificatori Bayesiani
+
+
+		[4] discutere se (e in che modo) i risultati del punto 2 trovano conferma nei modelli trovati
+		      al punto 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+""" 1) PANDAS :script per lavorare su dati di grossa dimensione"""
+""" 2) matplotlib: grafici come quelli di matlab"""
+""" 3) CSV : per lavorare sui file .csv"""
+import pandas as pd
+import matplotlib.pyplot as plt
+import csv
+
+
+""" 4) readcsv carica il file
+passando come parametri il nome del file e il tipo di separatore
+"""
+dati = pd.readcsv('postiletto.csv', sep= ';')
+
+""" 5) head(n) 
+sul nostro dataset ispezioniamo le prime n righe del file"""
+print (dati.head())
+
+""" 6) dtypes
+sul nostro dataset controlla se si è dedotto in modo esatto il TIPO di dato per ogni colonna"""
+print(dati.dtypes)
+
+""" 7)La ragione per cui alcune delle colonne numeriche sono scambiate per testuali (object) 
+è la presenza di valori come N.D. in colonne che dovrebbero contenere solo numeri. 
+Forziamo la conversione numerica con la funzione convert-objects """
+dati = dati.convert_objects(convert.numeric=True)
+
+"""Usciranno stampate a video le colonne del dataset 
+affiancate dal TIPO di dato che le rappresenta """
+
+print(dati.describe())
+"""
