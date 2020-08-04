@@ -10,7 +10,7 @@ It's the the set of techniques and methodologies which have as their object the 
 You'll learn how to work in Python on given datasets in "excel" format (.csv).
 You'll mostly use the Pandas Library.
 
-
+## How to Support me
 |  |  |
 | ------ | ------ |
 | Telegram Channel | [link][tg] |
