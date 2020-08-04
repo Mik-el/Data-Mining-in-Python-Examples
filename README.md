@@ -1,4 +1,4 @@
-# Data-Mining-Examples-in-Python
+# Data-Mining-in-Python-Examples
 ## Disclaimer
 1) The codes I'm sharing contain comments and variable names in italian. (but maybe you'll result to understand since the codes are quite easy). 
 2) The codes could have errors. If you find them you can use Github you can fix the code. Thank you!
